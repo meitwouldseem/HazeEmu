@@ -1,4 +1,6 @@
 #include "DMGCPU.h"
+#include "Bus.h"
+#include <iostream>
 
 DMGCPU::DMGCPU()
 {
@@ -18,7 +20,9 @@ void DMGCPU::Reset()
     D = 0x00;
     E = 0x00;
     F = 0x00;
-    G = 0x00;
+
+    H = 0x00;
+    L = 0x00;
 
     SP = 0x0000;
     PC = 0x0000;
@@ -39,14 +43,42 @@ uint8_t DMGCPU::ReadBus(uint16_t addr)
     return bus->read(addr);
 }
 
+void DMGCPU::RunTillStop()
+{
+    //we are going to go until a HALT is raised or PC exceeds 512
+    try
+    {
+        while(PC < 512)
+        {
+            PrintStatus();
+            Advance();
+        }
+    }
+    catch(char const*)
+    {
+        std::cerr << "HALT signal received" << std::endl;
+    }
+}
+
 void DMGCPU::Advance()
 {
+    //fetch
+    uint8_t opp = ReadBus(PC);
+    PC++;
 
+    //decode/execute
+    Execute(opp);
 }
 
 void DMGCPU::Execute(uint8_t oppcode)
 {
     if (oppcode == 0x00)
+        throw "HALT";
 
+    std::cerr << "Oppcode: " << std::hex << +oppcode << " Received" << std::endl;
 }
 
+void DMGCPU::PrintStatus()
+{
+    std::cout << "PC: " << +PC << std::endl;
+}

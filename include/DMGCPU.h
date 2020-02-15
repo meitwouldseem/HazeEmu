@@ -1,6 +1,9 @@
 #ifndef DMGCPU_H
 #define DMGCPU_H
 
+#include <cstdint>
+
+class Bus;
 
 class DMGCPU
 {
@@ -25,7 +28,7 @@ class DMGCPU
     */
 
     //F register should probably not be here.
-
+public:
     uint8_t A = 0x00;//accumulator
     uint8_t B = 0x00;
     uint8_t C = 0x00;
@@ -44,22 +47,24 @@ class DMGCPU
     bool h = false;//half carry
     bool c = false;//carry
 
+private:
+    Bus *bus = nullptr;
+
 public:
     DMGCPU();
     ~DMGCPU();
 
     void ConnectBus(Bus *n) { bus = n; }
 
-    void WriteBus(uint16_t addr, uint8_t data)
-    uint8_t ReadBus(uint16_t addr)
+    void WriteBus(uint16_t addr, uint8_t data);
+    uint8_t ReadBus(uint16_t addr);
 
     void Advance();
     void Execute(uint8_t oppcode);
 
     void Reset();
-
-private:
-    Bus *bus = nullptr;
+    void RunTillStop();
+    void PrintStatus();
 };
 
 #endif // DMGCPU_H
