@@ -53,7 +53,7 @@ public:
     void WriteBus(uint16_t addr, uint8_t data)
     uint8_t ReadBus(uint16_t addr)
 
-    void Step();
+    void Advance();
     void Execute(uint8_t oppcode);
 
     void Reset();

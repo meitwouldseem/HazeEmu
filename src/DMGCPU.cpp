@@ -39,13 +39,14 @@ uint8_t DMGCPU::ReadBus(uint16_t addr)
     return bus->read(addr);
 }
 
-void DMGCPU::Step()
+void DMGCPU::Advance()
 {
 
 }
 
 void DMGCPU::Execute(uint8_t oppcode)
 {
+    if (oppcode == 0x00)
 
 }
 
