@@ -3,7 +3,7 @@
 	<iostream>
 	"Bus.h"
 
-1581782867 source:c:\users\zoostorm\documents\matthew stuff\hazeemu\src\bus.cpp
+1581785080 source:c:\users\zoostorm\documents\matthew stuff\hazeemu\src\bus.cpp
 	"Bus.h"
 
 1581782024 c:\users\zoostorm\documents\matthew stuff\hazeemu\include\bus.h
@@ -14,7 +14,7 @@
 1581783548 c:\users\zoostorm\documents\matthew stuff\hazeemu\include\dmgcpu.h
 	<cstdint>
 
-1581783125 source:c:\users\zoostorm\documents\matthew stuff\hazeemu\src\dmgcpu.cpp
+1581803553 source:c:\users\zoostorm\documents\matthew stuff\hazeemu\src\dmgcpu.cpp
 	"DMGCPU.h"
 	"Bus.h"
 	<iostream>

@@ -2,10 +2,6 @@
 
 Bus::Bus()
 {
-    //Clear ram here
-    //for (uint8_t i ; ram) i = 0x00;
-    //This might be wrong in some way so be sure to revisit it
-
     cpu.ConnectBus(this);
 }
 

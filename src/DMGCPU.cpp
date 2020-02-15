@@ -1,5 +1,6 @@
 #include "DMGCPU.h"
 #include "Bus.h"
+
 #include <iostream>
 
 DMGCPU::DMGCPU()
@@ -48,7 +49,7 @@ void DMGCPU::RunTillStop()
     //we are going to go until a HALT is raised or PC exceeds 512
     try
     {
-        while(PC < 512)
+        while(PC < 0xffff)
         {
             PrintStatus();
             Advance();
@@ -80,5 +81,5 @@ void DMGCPU::Execute(uint8_t oppcode)
 
 void DMGCPU::PrintStatus()
 {
-    std::cout << "PC: " << +PC << std::endl;
+    std::cout << "PC: " << std::hex << +PC << std::dec << " (" << +PC << ")" << std::endl;
 }
