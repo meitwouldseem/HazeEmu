@@ -57,7 +57,7 @@ void DMGCPU::RunTillStop()
     }
     catch(char const*)
     {
-        std::cerr << "HALT signal received" << std::endl;
+        std::cout << "HALT signal received" << std::endl;
     }
 }
 
@@ -76,7 +76,7 @@ void DMGCPU::Execute(uint8_t oppcode)
     if (oppcode == 0x00)
         throw "HALT";
 
-    std::cerr << "Oppcode: " << std::hex << +oppcode << " Received" << std::endl;
+    std::cout << "Oppcode: " << std::hex << +oppcode << " Received" << std::endl;
 }
 
 void DMGCPU::PrintStatus()
