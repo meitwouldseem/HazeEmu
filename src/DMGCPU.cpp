@@ -83,3 +83,36 @@ void DMGCPU::PrintStatus()
 {
     std::cout << "PC: " << std::hex << +PC << std::dec << " (" << +PC << ")" << std::endl;
 }
+
+uint8_t DMGCPU::Imm8()
+{
+    uint8_t byte = ReadBus(PC);
+    pc++
+    return byte;
+}
+
+uint16_t DMGCPU::Imm16()
+{
+    //These need to be 16 bit integers to make space for the bit shift
+
+    uint16_t lo = ReadBus(PC);
+    PC++;
+    uint16_t hi = ReadBus(PC);
+    PC++;
+
+    return (hi << 8) | lo;
+}
+
+uint8_t DMGCPU::Pointer8()
+{
+    offset = Imm8();
+
+    return ReadBus(0xFF00 + offset);
+}
+
+uint16_t DMGCPU::Pointer16()
+{
+    addr = Imm16();
+
+    return ReadBus(addr);
+}
