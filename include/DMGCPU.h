@@ -30,11 +30,11 @@ class DMGCPU
     //F register should probably not be here.
 public:
     uint8_t A = 0x00;//accumulator
+    uint8_t F = 0x00;//flags (Ignore)
     uint8_t B = 0x00;
     uint8_t C = 0x00;
     uint8_t D = 0x00;
     uint8_t E = 0x00;
-    uint8_t F = 0x00;//flags
     uint8_t H = 0x00;
     uint8_t L = 0x00;
 
@@ -44,7 +44,7 @@ public:
     //Flags
     bool z = false;//zero
     bool n = false;//subtract
-    bool h = false;//half carry
+    bool h = false;//half carry (Ignore)
     bool c = false;//carry
 
 private:
@@ -60,11 +60,15 @@ public:
     uint8_t ReadBus(uint16_t addr);
 
     void Advance();
-    void Execute(uint8_t oppcode);
 
     void Reset();
     void RunTillStop();
     void PrintStatus();
+
+private:
+    void Execute(uint8_t oppcode);
+
+    void XXX();
 };
 
 #endif // DMGCPU_H
