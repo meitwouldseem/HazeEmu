@@ -2,6 +2,7 @@
 #define DMGCPU_H
 
 #include <cstdint>
+#include <string>
 
 class Bus;
 
@@ -68,7 +69,27 @@ public:
 private:
     void Execute(uint8_t oppcode);
 
-    void XXX();
+    //instruction set implementation
+
+    struct INSTRUCTION
+    {
+        std::string name = "Null";
+        void (DMGCPU::opp*)() opp = nullptr;
+        uint8_t cycles = 0;
+    };
+
+    std::vector<INSTRUCTION> lookup_1;
+
+    void NOP();
+
+    void LD_SP();
+
+    //Addressing modes
+
+    uint8_t Imm8();
+    uint16_t Imm16();
+    uint8_t Ptr8();
+    uint16_t Ptr16();
 };
 
 #endif // DMGCPU_H
