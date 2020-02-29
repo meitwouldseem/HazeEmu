@@ -8,22 +8,22 @@ DMGCPU::DMGCPU()
     using a = DMGCPU;
     lookup_1 =
     {
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1},{"NOP",&a::NOP(),1}
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"LD_SP_16",&a::LD_SP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1}
     };
 }
 
@@ -96,11 +96,15 @@ void DMGCPU::Execute(uint8_t oppcode)
         throw "HALT";
 
     std::cout << "Oppcode: " << std::hex << +oppcode << " Received" << std::endl;
+
+    (this->*lookup_1[oppcode].opp)();
 }
 
 void DMGCPU::PrintStatus()
 {
-    std::cout << "PC: " << std::hex << +PC << std::dec << " (" << +PC << ")" << std::endl;
+    using namespace std;
+    cout << "PC: " << hex << +PC << dec << " (" << +PC << ")" << endl;
+    cout << "SP: " << hex << +SP << dec << " (" << +SP << ")" << endl;
 }
 
 //Instruction set implementation
@@ -112,7 +116,7 @@ void DMGCPU::LD_SP() {SP = Imm16();}
 uint8_t DMGCPU::Imm8()
 {
     uint8_t byte = ReadBus(PC);
-    pc++
+    PC++;
     return byte;
 }
 

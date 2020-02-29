@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <string>
+#include <vector>
 
 class Bus;
 
@@ -74,7 +75,7 @@ private:
     struct INSTRUCTION
     {
         std::string name = "Null";
-        void (DMGCPU::opp*)() opp = nullptr;
+        void (DMGCPU::*opp)() = nullptr;
         uint8_t cycles = 0;
     };
 
