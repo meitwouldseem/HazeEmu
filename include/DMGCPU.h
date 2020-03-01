@@ -84,6 +84,7 @@ private:
     void NOP();
 
     void LD_SP();
+    void XOR_A();
 
     //Addressing modes
 
