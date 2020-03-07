@@ -103,8 +103,9 @@ void DMGCPU::Execute(uint8_t oppcode)
 void DMGCPU::PrintStatus()
 {
     using namespace std;
-    cout << "PC: " << hex << +PC << dec << " (" << +PC << ")" << endl;
+    cout << "HL: " << hex << +read_HL() << dec << " (" << +read_HL() << ")" << endl;
     cout << "SP: " << hex << +SP << dec << " (" << +SP << ")" << endl;
+    cout << "PC: " << hex << +PC << dec << " (" << +PC << ")" << endl;
 }
 
 //Instruction set implementation
@@ -112,7 +113,12 @@ void DMGCPU::PrintStatus()
 void DMGCPU::NOP() {return;}
 
 void DMGCPU::LD_SP() {SP = Imm16();}
+void DMGCPU::LD_HL() {write_HL(Imm16());}
 void DMGCPU::XOR_A() {A = A ^ A;}
+
+void DMGCPU::write_HL(uint16_t val) {H = val >> 8; L = val;}
+
+uint16_t DMGCPU::read_HL() {return (H << 8) | L;}
 
 uint8_t DMGCPU::Imm8()
 {

@@ -85,6 +85,12 @@ private:
 
     void LD_SP();
     void XOR_A();
+    void LD_HL();
+
+    //Read and write HL
+
+    void write_HL(uint16_t val);
+    uint16_t read_HL();
 
     //Addressing modes
 
