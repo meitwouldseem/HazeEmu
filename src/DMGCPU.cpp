@@ -130,9 +130,6 @@ void DMGCPU::XOR_L() {XOR(L);}
 void DMGCPU::XOR_HL() {XOR(ReadBus(read_pair(H, L)));}
 void DMGCPU::XOR_A() {XOR(A);}
 
-//void DMGCPU::write_HL(uint16_t val) {H = val >> 8; L = val;}
-//uint16_t DMGCPU::read_HL() {return (H << 8) | L;}
-
 void DMGCPU::write_pair(uint16_t val, uint8_t &hi, uint8_t &lo)
 {
     hi = val >> 8;
