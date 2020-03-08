@@ -81,11 +81,25 @@ private:
 
     std::vector<INSTRUCTION> lookup_1;
 
+    //instruction bindings
+
     void NOP();
 
     void LD_SP();
+
+    void XOR_B();
+    void XOR_C();
+    void XOR_D();
+    void XOR_E();
+    void XOR_H();
+    void XOR_L();
+    void XOR_HL();
     void XOR_A();
     void LD_HL();
+
+    //instruction behaviour implementations
+
+    void XOR(uint8_t operand);
 
     //Read and write HL
 

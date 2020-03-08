@@ -18,7 +18,7 @@ DMGCPU::DMGCPU()
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//7
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//8
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//9
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"XOR_A",&a::XOR_A,1},//A
+        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"XOR_B",&a::XOR_B,1},{"XOR_C",&a::XOR_C,1},{"XOR_D",&a::XOR_D,1},{"XOR_E",&a::XOR_E,1},{"XOR_H",&a::XOR_H,1},{"XOR_L",&a::XOR_L,1},{"XOR_HL",&a::XOR_HL,1},{"XOR_A",&a::XOR_A,1},//A
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//B
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//C
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//D
@@ -103,22 +103,46 @@ void DMGCPU::Execute(uint8_t oppcode)
 void DMGCPU::PrintStatus()
 {
     using namespace std;
+    cout << "A: " << hex << +A << dec << " (" << +A << ")" << endl;
+    cout << "B: " << hex << +B << dec << " (" << +B << ")" << endl;
+    cout << "C: " << hex << +C << dec << " (" << +C << ")" << endl;
+    cout << "D: " << hex << +D << dec << " (" << +D << ")" << endl;
+    cout << "E: " << hex << +E << dec << " (" << +E << ")" << endl;
     cout << "HL: " << hex << +read_HL() << dec << " (" << +read_HL() << ")" << endl;
     cout << "SP: " << hex << +SP << dec << " (" << +SP << ")" << endl;
     cout << "PC: " << hex << +PC << dec << " (" << +PC << ")" << endl;
 }
 
-//Instruction set implementation
+//Instruction set bindings
 
 void DMGCPU::NOP() {return;}
 
 void DMGCPU::LD_SP() {SP = Imm16();}
 void DMGCPU::LD_HL() {write_HL(Imm16());}
-void DMGCPU::XOR_A() {A = A ^ A;}
+
+void DMGCPU::XOR_B() {XOR(B);}
+void DMGCPU::XOR_C() {XOR(C);}
+void DMGCPU::XOR_D() {XOR(D);}
+void DMGCPU::XOR_E() {XOR(E);}
+void DMGCPU::XOR_H() {XOR(H);}
+void DMGCPU::XOR_L() {XOR(L);}
+void DMGCPU::XOR_HL() {XOR(ReadBus(read_HL()));}
+void DMGCPU::XOR_A() {XOR(A);}
 
 void DMGCPU::write_HL(uint16_t val) {H = val >> 8; L = val;}
-
 uint16_t DMGCPU::read_HL() {return (H << 8) | L;}
+
+//instruction behaviour implementations
+
+//XOR operations always target the ACC (A) so this function need not return a value
+void DMGCPU::XOR(uint8_t operand)
+{
+    A = A ^ operand;
+    if (A == 0x00)
+        z=true;
+}
+
+//addressing modes
 
 uint8_t DMGCPU::Imm8()
 {
