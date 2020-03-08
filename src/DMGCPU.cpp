@@ -111,6 +111,7 @@ void DMGCPU::PrintStatus()
     cout << "HL: " << hex << +read_HL() << dec << " (" << +read_HL() << ")" << endl;
     cout << "SP: " << hex << +SP << dec << " (" << +SP << ")" << endl;
     cout << "PC: " << hex << +PC << dec << " (" << +PC << ")" << endl;
+    cout << "Flags:  z=" << z << " n=" << n << " h=" << h << " c=" << c << endl;
 }
 
 //Instruction set bindings
