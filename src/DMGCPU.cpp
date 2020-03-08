@@ -108,7 +108,7 @@ void DMGCPU::PrintStatus()
     cout << "C: " << hex << +C << dec << " (" << +C << ")" << endl;
     cout << "D: " << hex << +D << dec << " (" << +D << ")" << endl;
     cout << "E: " << hex << +E << dec << " (" << +E << ")" << endl;
-    cout << "HL: " << hex << +read_HL() << dec << " (" << +read_HL() << ")" << endl;
+    cout << "HL: " << hex << +read_pair(H, L) << dec << " (" << +read_pair(H, L) << ")" << endl;
     cout << "SP: " << hex << +SP << dec << " (" << +SP << ")" << endl;
     cout << "PC: " << hex << +PC << dec << " (" << +PC << ")" << endl;
     cout << "Flags:  z=" << z << " n=" << n << " h=" << h << " c=" << c << endl;
@@ -119,7 +119,7 @@ void DMGCPU::PrintStatus()
 void DMGCPU::NOP() {return;}
 
 void DMGCPU::LD_SP() {SP = Imm16();}
-void DMGCPU::LD_HL() {write_HL(Imm16());}
+void DMGCPU::LD_HL() {write_pair(Imm16(), H, L);}
 
 void DMGCPU::XOR_B() {XOR(B);}
 void DMGCPU::XOR_C() {XOR(C);}
@@ -127,11 +127,22 @@ void DMGCPU::XOR_D() {XOR(D);}
 void DMGCPU::XOR_E() {XOR(E);}
 void DMGCPU::XOR_H() {XOR(H);}
 void DMGCPU::XOR_L() {XOR(L);}
-void DMGCPU::XOR_HL() {XOR(ReadBus(read_HL()));}
+void DMGCPU::XOR_HL() {XOR(ReadBus(read_pair(H, L)));}
 void DMGCPU::XOR_A() {XOR(A);}
 
-void DMGCPU::write_HL(uint16_t val) {H = val >> 8; L = val;}
-uint16_t DMGCPU::read_HL() {return (H << 8) | L;}
+//void DMGCPU::write_HL(uint16_t val) {H = val >> 8; L = val;}
+//uint16_t DMGCPU::read_HL() {return (H << 8) | L;}
+
+void DMGCPU::write_pair(uint16_t val, uint8_t &hi, uint8_t &lo)
+{
+    hi = val >> 8;
+    lo = val;
+}
+
+uint16_t DMGCPU::read_pair(uint8_t hi, uint8_t lo)
+{
+    return (hi << 8) | lo;
+}
 
 //instruction behaviour implementations
 

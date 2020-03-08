@@ -103,8 +103,8 @@ private:
 
     //Read and write HL
 
-    void write_HL(uint16_t val);
-    uint16_t read_HL();
+    void write_pair(uint16_t val, uint8_t &hi, uint8_t &lo);
+    uint16_t read_pair(uint8_t hi, uint8_t lo);
 
     //Addressing modes
 
