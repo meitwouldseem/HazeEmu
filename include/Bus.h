@@ -13,6 +13,7 @@ class Bus
 
         void write(uint16_t addr, uint8_t data);
         uint8_t read(uint16_t addr);//might need bool readonly = false as arg 2 here. Don't know yet
+        uint8_t& getref(uint16_t addr);
 
         //devices on the bus go under this line.
 

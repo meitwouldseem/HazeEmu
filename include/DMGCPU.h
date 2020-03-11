@@ -60,6 +60,7 @@ public:
 
     void WriteBus(uint16_t addr, uint8_t data);
     uint8_t ReadBus(uint16_t addr);
+    uint8_t& GetRef(uint16_t addr);
 
     void Advance();
 
@@ -83,23 +84,65 @@ private:
 
     //instruction bindings
 
+    // _ at the end of a binding denotes 16bit reg being used as a pointer
+    // D8 means 8bit immediate data
+
     void NOP();
 
     void LD_SP();
+    void LD_HL();
 
+    //8bit xor bindings
     void XOR_B();
     void XOR_C();
     void XOR_D();
     void XOR_E();
     void XOR_H();
     void XOR_L();
-    void XOR_HL();
+    void XOR_HL_();
     void XOR_A();
-    void LD_HL();
+    void XOR_D8();
+
+    //16bit increment bindings
+    void INC_BC();
+    void INC_DE();
+    void INC_HL();
+    void INC_SP();
+
+    //8bit increment bindings
+    void INC_B();
+    void INC_C();
+    void INC_D();
+    void INC_E();
+    void INC_H();
+    void INC_L();
+    void INC_HL_();
+    void INC_A();
+
+    //16bit decrement bindings
+    void DEC_BC();
+    void DEC_DE();
+    void DEC_HL();
+    void DEC_SP();
+
+    //8bit decrement bindings
+    void DEC_B();
+    void DEC_C();
+    void DEC_D();
+    void DEC_E();
+    void DEC_H();
+    void DEC_L();
+    void DEC_HL_();
+    void DEC_A();
 
     //instruction behaviour implementations
 
     void XOR(uint8_t operand);
+
+    void INC(uint8_t &operand);
+    void INC(uint8_t &hi, uint8_t &lo);
+    void DEC(uint8_t &operand);
+    void DEC(uint8_t &hi, uint8_t &lo);
 
     //Read and write HL
 
