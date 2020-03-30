@@ -113,7 +113,7 @@ void DMGCPU::PrintStatus()
     cout << "C: " << hex << +C << dec << " (" << +C << ")" << endl;
     cout << "D: " << hex << +D << dec << " (" << +D << ")" << endl;
     cout << "E: " << hex << +E << dec << " (" << +E << ")" << endl;
-    cout << "HL: " << hex << +read_pair(H, L) << dec << " (" << +read_pair(H, L) << ")" << endl;
+    cout << "HL: " << hex << +ReadPair(H, L) << dec << " (" << +ReadPair(H, L) << ")" << endl;
     cout << "SP: " << hex << +SP << dec << " (" << +SP << ")" << endl;
     cout << "PC: " << hex << +PC << dec << " (" << +PC << ")" << endl;
     cout << "Flags:  z=" << z << " n=" << n << " h=" << h << " c=" << c << endl;
@@ -124,7 +124,7 @@ void DMGCPU::PrintStatus()
 void DMGCPU::NOP() {return;}
 
 void DMGCPU::LD_SP() {SP = Imm16();}
-void DMGCPU::LD_HL() {write_pair(Imm16(), H, L);}
+void DMGCPU::LD_HL() {WritePair(Imm16(), H, L);}
 
 //8bit xor bindings
 void DMGCPU::XOR_B() {XOR(B);}
@@ -133,14 +133,14 @@ void DMGCPU::XOR_D() {XOR(D);}
 void DMGCPU::XOR_E() {XOR(E);}
 void DMGCPU::XOR_H() {XOR(H);}
 void DMGCPU::XOR_L() {XOR(L);}
-void DMGCPU::XOR_HL_() {XOR(ReadBus(read_pair(H, L)));}
+void DMGCPU::XOR_HL_() {XOR(ReadBus(ReadPair(H, L)));}
 void DMGCPU::XOR_A() {XOR(A);}
 void DMGCPU::XOR_D8() {XOR(Imm8());}
 
 //16bit increment bindings
-void DMGCPU::INC_BC() {increment_pair(B, C);}
-void DMGCPU::INC_DE() {increment_pair(D, E);}
-void DMGCPU::INC_HL() {increment_pair(H, L);}
+void DMGCPU::INC_BC() {IncrementPair(B, C);}
+void DMGCPU::INC_DE() {IncrementPair(D, E);}
+void DMGCPU::INC_HL() {IncrementPair(H, L);}
 void DMGCPU::INC_SP() {SP++;}
 
 //8bit increment bindings
@@ -150,13 +150,13 @@ void DMGCPU::INC_D() {INC(D);}
 void DMGCPU::INC_E() {INC(E);}
 void DMGCPU::INC_H() {INC(H);}
 void DMGCPU::INC_L() {INC(L);}
-void DMGCPU::INC_HL_() {INC(GetRef(read_pair(H, L)));}
+void DMGCPU::INC_HL_() {INC(GetRef(ReadPair(H, L)));}
 void DMGCPU::INC_A() {INC(A);}
 
 //16bit decrement bindings
-void DMGCPU::DEC_BC() {decrement_pair(B, C);}
-void DMGCPU::DEC_DE() {decrement_pair(D, E);}
-void DMGCPU::DEC_HL() {decrement_pair(H, L);}
+void DMGCPU::DEC_BC() {DecrementPair(B, C);}
+void DMGCPU::DEC_DE() {DecrementPair(D, E);}
+void DMGCPU::DEC_HL() {DecrementPair(H, L);}
 void DMGCPU::DEC_SP() {SP--;}
 
 //8bit decrement bindings
@@ -166,7 +166,7 @@ void DMGCPU::DEC_D() {DEC(D);}
 void DMGCPU::DEC_E() {DEC(E);}
 void DMGCPU::DEC_H() {DEC(H);}
 void DMGCPU::DEC_L() {DEC(L);}
-void DMGCPU::DEC_HL_() {DEC(GetRef(read_pair(H, L)));}
+void DMGCPU::DEC_HL_() {DEC(GetRef(ReadPair(H, L)));}
 void DMGCPU::DEC_A() {DEC(A);}
 
 //8bit load bindings (A)
@@ -176,7 +176,7 @@ void DMGCPU::LD_A_D() {A=D;}
 void DMGCPU::LD_A_E() {A=E;}
 void DMGCPU::LD_A_H() {A=H;}
 void DMGCPU::LD_A_L() {A=L;}
-void DMGCPU::LD_A_HL_() {A=ReadBus(read_pair(H, L));}
+void DMGCPU::LD_A_HL_() {A=ReadBus(ReadPair(H, L));}
 //void DMGCPU::LD_A_A() {return;}
 void DMGCPU::LD_A_D8() {A=Imm8();}
 
@@ -187,7 +187,7 @@ void DMGCPU::LD_B_D() {B=D;}
 void DMGCPU::LD_B_E() {B=E;}
 void DMGCPU::LD_B_H() {B=H;}
 void DMGCPU::LD_B_L() {B=L;}
-void DMGCPU::LD_B_HL_() {B=ReadBus(read_pair(H, L));}
+void DMGCPU::LD_B_HL_() {B=ReadBus(ReadPair(H, L));}
 void DMGCPU::LD_B_A() {B=A;}
 void DMGCPU::LD_B_D8() {B=Imm8();}
 
@@ -198,7 +198,7 @@ void DMGCPU::LD_C_D() {C=D;}
 void DMGCPU::LD_C_E() {C=E;}
 void DMGCPU::LD_C_H() {C=H;}
 void DMGCPU::LD_C_L() {C=L;}
-void DMGCPU::LD_C_HL_() {C=ReadBus(read_pair(H, L));}
+void DMGCPU::LD_C_HL_() {C=ReadBus(ReadPair(H, L));}
 void DMGCPU::LD_C_A() {C=A;}
 void DMGCPU::LD_C_D8() {C=Imm8();}
 
@@ -209,7 +209,7 @@ void DMGCPU::LD_D_C() {D=C;}
 void DMGCPU::LD_D_E() {D=E;}
 void DMGCPU::LD_D_H() {D=H;}
 void DMGCPU::LD_D_L() {D=L;}
-void DMGCPU::LD_D_HL_() {D=ReadBus(read_pair(H, L));}
+void DMGCPU::LD_D_HL_() {D=ReadBus(ReadPair(H, L));}
 void DMGCPU::LD_D_A() {D=A;}
 void DMGCPU::LD_D_D8() {D=Imm8();}
 
@@ -220,7 +220,7 @@ void DMGCPU::LD_E_D() {E=D;}
 //void DMGCPU::LD_E_E() {return;}
 void DMGCPU::LD_E_H() {E=H;}
 void DMGCPU::LD_E_L() {E=L;}
-void DMGCPU::LD_E_HL_() {E=ReadBusread_pair(H, L));}
+void DMGCPU::LD_E_HL_() {E=ReadBus(ReadPair(H, L));}
 void DMGCPU::LD_E_A() {E=A;}
 void DMGCPU::LD_E_D8() {E=Imm8();}
 
@@ -231,7 +231,7 @@ void DMGCPU::LD_H_D() {H=D;}
 void DMGCPU::LD_H_E() {H=E;}
 //void DMGCPU::LD_H_H() {return;}
 void DMGCPU::LD_H_L() {H=L;}
-void DMGCPU::LD_H_HL_() {H=ReadBus(read_pair(H, L));}
+void DMGCPU::LD_H_HL_() {H=ReadBus(ReadPair(H, L));}
 void DMGCPU::LD_H_A() {H=A;}
 void DMGCPU::LD_H_D8() {H=Imm8();}
 
@@ -242,45 +242,45 @@ void DMGCPU::LD_L_D() {L=D;}
 void DMGCPU::LD_L_E() {L=E;}
 void DMGCPU::LD_L_H() {L=H;}
 //void DMGCPU::LD_L_L() {return;}
-void DMGCPU::LD_L_HL_() {L=ReadBus(read_pair(H, L));}
+void DMGCPU::LD_L_HL_() {L=ReadBus(ReadPair(H, L));}
 void DMGCPU::LD_L_A() {L=A;}
 void DMGCPU::LD_L_D8() {L=Imm8();}
 
-void DMGCPU::LD_HL_B_() {WriteBus(read_pair(H, L), B);}
-void DMGCPU::LD_HL_C_() {WriteBus(read_pair(H, L), C);}
-void DMGCPU::LD_HL_D_() {WriteBus(read_pair(H, L), D);}
-void DMGCPU::LD_HL_E_() {WriteBus(read_pair(H, L), E);}
-void DMGCPU::LD_HL_H_() {WriteBus(read_pair(H, L), H);}
-void DMGCPU::LD_HL_L_() {WriteBus(read_pair(H, L), L);}
-void DMGCPU::LD_HL_A_() {WriteBus(read_pair(H, L), A);}
-void DMGCPU::LD_HL_D8_() {WriteBus(read_pair(H, L), Imm8());}
+void DMGCPU::LD_HL_B_() {WriteBus(ReadPair(H, L), B);}
+void DMGCPU::LD_HL_C_() {WriteBus(ReadPair(H, L), C);}
+void DMGCPU::LD_HL_D_() {WriteBus(ReadPair(H, L), D);}
+void DMGCPU::LD_HL_E_() {WriteBus(ReadPair(H, L), E);}
+void DMGCPU::LD_HL_H_() {WriteBus(ReadPair(H, L), H);}
+void DMGCPU::LD_HL_L_() {WriteBus(ReadPair(H, L), L);}
+void DMGCPU::LD_HL_A_() {WriteBus(ReadPair(H, L), A);}
+void DMGCPU::LD_HL_D8_() {WriteBus(ReadPair(H, L), Imm8());}
 
-void DMGCPU::LD_BC_A_() {WriteBus(read_pair(B, C), A);}
-void DMGCPU::LD_DE_A_() {WriteBus(read_pair(D, E), A);;}
+void DMGCPU::LD_BC_A_() {WriteBus(ReadPair(B, C), A);}
+void DMGCPU::LD_DE_A_() {WriteBus(ReadPair(D, E), A);;}
 
 void DMGCPU::LD_LHp_A_() {}
 
 //helper functions
 
-void DMGCPU::write_pair(uint16_t val, uint8_t &hi, uint8_t &lo)
+void DMGCPU::WritePair(uint16_t val, uint8_t &hi, uint8_t &lo)
 {
     hi = val >> 8;
     lo = val;
 }
 
-uint16_t DMGCPU::read_pair(uint8_t hi, uint8_t lo)
+uint16_t DMGCPU::ReadPair(uint8_t hi, uint8_t lo)
 {
     return (hi << 8) | lo;
 }
 
-void DMGCPU::increment_pair(uint8_t &hi, uint8_t &lo)
+void DMGCPU::IncrementPair(uint8_t &hi, uint8_t &lo)
 {
     lo++;
     if (lo == 0x00)
         hi++;
 }
 
-void DMGCPU::decrement_pair(uint8_t &hi, uint8_t &lo)
+void DMGCPU::DecrementPair(uint8_t &hi, uint8_t &lo)
 {
     lo--;
     if (lo == 0xFF)
