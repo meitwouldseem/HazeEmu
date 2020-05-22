@@ -88,6 +88,7 @@ private:
     // D8 means 8bit immediate data
 
     void NOP();
+    void HALT();
 
     void LD_SP();
     void LD_HL();
@@ -135,6 +136,102 @@ private:
     void DEC_HL_();
     void DEC_A();
 
+    //8bit load bindings (A)
+    void LD_A_B();
+    void LD_A_C();
+    void LD_A_D();
+    void LD_A_E();
+    void LD_A_H();
+    void LD_A_L();
+    void LD_A_HL_();
+    //void LD_A_A();
+    void LD_A_D8();
+
+    //8bit load bindings (B)
+    //void LD_B_B();
+    void LD_B_C();
+    void LD_B_D();
+    void LD_B_E();
+    void LD_B_H();
+    void LD_B_L();
+    void LD_B_HL_();
+    void LD_B_A();
+    void LD_B_D8();
+
+    //8bit load bindings (C)
+    void LD_C_B();
+    //void LD_C_C();
+    void LD_C_D();
+    void LD_C_E();
+    void LD_C_H();
+    void LD_C_L();
+    void LD_C_HL_();
+    void LD_C_A();
+    void LD_C_D8();
+
+    //8bit load bindings (D)
+    void LD_D_B();
+    void LD_D_C();
+    //void LD_D_D();
+    void LD_D_E();
+    void LD_D_H();
+    void LD_D_L();
+    void LD_D_HL_();
+    void LD_D_A();
+    void LD_D_D8();
+
+    //8bit load bindings (E)
+    void LD_E_B();
+    void LD_E_C();
+    void LD_E_D();
+    //void LD_E_E();
+    void LD_E_H();
+    void LD_E_L();
+    void LD_E_HL_();
+    void LD_E_A();
+    void LD_E_D8();
+
+    //8bit load bindings (H)
+    void LD_H_B();
+    void LD_H_C();
+    void LD_H_D();
+    void LD_H_E();
+    //void LD_H_H();
+    void LD_H_L();
+    void LD_H_HL_();
+    void LD_H_A();
+    void LD_H_D8();
+
+    //8bit load bindings (L)
+    void LD_L_B();
+    void LD_L_C();
+    void LD_L_D();
+    void LD_L_E();
+    void LD_L_H();
+    //void LD_L_L();
+    void LD_L_HL_();
+    void LD_L_A();
+    void LD_L_D8();
+
+    void LD_HL_B_();
+    void LD_HL_C_();
+    void LD_HL_D_();
+    void LD_HL_E_();
+    void LD_HL_H_();
+    void LD_HL_L_();
+    void LD_HL_A_();
+    void LD_HL_D8_();
+
+    void LD_BC_A_();
+    void LD_DE_A_();
+    void LD_A_BC_();
+    void LD_A_DE_();
+
+    void LD_HLp_A_();
+    void LD_HLm_A_();
+    void LD_A_HLp_();
+    void LD_A_HLm_();
+
     //instruction behaviour implementations
 
     void XOR(uint8_t operand);
@@ -148,6 +245,11 @@ private:
 
     void WritePair(uint16_t val, uint8_t &hi, uint8_t &lo);
     uint16_t ReadPair(uint8_t hi, uint8_t lo);
+
+    //Increment/Decrement pair
+
+    void IncrementPair(uint8_t &hi, uint8_t &lo);
+    void DecrementPair(uint8_t &hi, uint8_t &lo);
 
     //Addressing modes
 

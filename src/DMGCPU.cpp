@@ -8,14 +8,14 @@ DMGCPU::DMGCPU()
     using a = DMGCPU;
     lookup_1 =
     {
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"INC_BC",&a::INC_BC,1},{"INC_B",&a::INC_B,1},{"DEC_B",&a::DEC_B,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"DEC_BC",&a::DEC_BC,1},{"INC_C",&a::INC_C,1},{"DEC_C",&a::DEC_C,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//0
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"INC_DE",&a::INC_DE,1},{"INC_D",&a::INC_D,1},{"DEC_D",&a::DEC_D,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"DEC_DE",&a::DEC_DE,1},{"INC_E",&a::INC_E,1},{"DEC_E",&a::DEC_E,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//1
-        {"NOP",&a::NOP,1},{"LD_HL",&a::LD_HL,1},{"NOP",&a::NOP,1},{"INC_HL",&a::INC_HL,1},{"INC_H",&a::INC_H,1},{"DEC_H",&a::DEC_H,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"DEC_HL",&a::DEC_HL,1},{"INC_L",&a::INC_L,1},{"DEC_L",&a::DEC_L,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//2
-        {"NOP",&a::NOP,1},{"LD_SP",&a::LD_SP,1},{"NOP",&a::NOP,1},{"INC_SP",&a::INC_SP,1},{"INC(HL)",&a::INC_HL_,1},{"DEC(HL)",&a::DEC_HL_,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"DEC_SP",&a::DEC_SP,1},{"INC_A",&a::INC_A,1},{"DEC_A",&a::DEC_A,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//3
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//4
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//5
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//6
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//7
+        {"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1}         ,{"LD(BC)A",&a::LD_BC_A_,1}  ,{"INC_BC",&a::INC_BC,1}   ,{"INC_B",&a::INC_B,1}     ,{"DEC_B",&a::DEC_B,1}     ,{"LD_B_D8",&a::LD_B_D8,1}   ,{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(BC)",&a::LD_A_BC_,1},{"DEC_BC",&a::DEC_BC,1},{"INC_C",&a::INC_C,1},{"DEC_C",&a::DEC_C,1},{"NOP",&a::LD_C_D8,1},{"NOP",&a::NOP,1},//0
+        {"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1}         ,{"LD(DE)A",&a::LD_DE_A_,1}  ,{"INC_DE",&a::INC_DE,1}   ,{"INC_D",&a::INC_D,1}     ,{"DEC_D",&a::DEC_D,1}     ,{"LD_D_D8",&a::LD_D_D8,1}   ,{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(DE)",&a::LD_A_DE_,1},{"DEC_DE",&a::DEC_DE,1},{"INC_E",&a::INC_E,1},{"DEC_E",&a::DEC_E,1},{"NOP",&a::LD_E_D8,1},{"NOP",&a::NOP,1},//1
+        {"NOP",&a::NOP,1}         ,{"LD_HL",&a::LD_HL,1}     ,{"LD(HL+)A",&a::LD_HLp_A_,1},{"INC_HL",&a::INC_HL,1}   ,{"INC_H",&a::INC_H,1}     ,{"DEC_H",&a::DEC_H,1}     ,{"LD_H_D8",&a::LD_H_D8,1}   ,{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(HL+)",&a::LD_A_HLp_,1},{"DEC_HL",&a::DEC_HL,1},{"INC_L",&a::INC_L,1},{"DEC_L",&a::DEC_L,1},{"NOP",&a::LD_L_D8,1},{"NOP",&a::NOP,1},//2
+        {"NOP",&a::NOP,1}         ,{"LD_SP",&a::LD_SP,1}     ,{"LD(HL-)A",&a::LD_HLm_A_,1},{"INC_SP",&a::INC_SP,1}   ,{"INC(HL)",&a::INC_HL_,1} ,{"DEC(HL)",&a::DEC_HL_,1} ,{"LD(HL)D8",&a::LD_HL_D8_,1},{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(HL-)",&a::LD_A_HLm_,1},{"DEC_SP",&a::DEC_SP,1},{"INC_A",&a::INC_A,1},{"DEC_A",&a::DEC_A,1},{"NOP",&a::LD_A_D8,1},{"NOP",&a::NOP,1},//3
+        {"LD_B_B",&a::NOP,1}      ,{"LD_B_C",&a::LD_B_C,1}   ,{"LD_B_D",&a::LD_B_D,1}     ,{"LD_B_E",&a::LD_B_E,1}   ,{"LD_B_H",&a::LD_B_H,1}   ,{"LD_B_L",&a::LD_B_L,1}   ,{"LD_B(HL)",&a::LD_B_HL_,1} ,{"LD_B_A",&a::LD_B_A,1}   ,{"LD_C_B",&a::LD_C_B,1},{"LD_C_C",&a::NOP,1}   ,{"LD_C_D",&a::LD_C_D,1},{"LD_C_E",&a::LD_C_E,1},{"LD_C_H",&a::LD_C_H,1},{"LD_C_L",&a::LD_C_L,1},{"LD_C(HL)",&a::LD_C_HL_,1},{"LD_C_A",&a::LD_C_A,1},//4
+        {"LD_D_B",&a::LD_D_B,1}   ,{"LD_D_C",&a::LD_D_C,1}   ,{"LD_D_D",&a::NOP,1}        ,{"LD_D_E",&a::LD_D_E,1}   ,{"LD_D_H",&a::LD_D_H,1}   ,{"LD_D_L",&a::LD_D_L,1}   ,{"LD_D(HL)",&a::LD_D_HL_,1} ,{"LD_D_A",&a::LD_D_A,1}   ,{"LD_E_B",&a::LD_E_B,1},{"LD_E_C",&a::LD_E_C,1},{"LD_E_D",&a::LD_E_D,1},{"LD_E_E",&a::NOP,1}   ,{"LD_E_H",&a::LD_E_H,1},{"LD_E_L",&a::LD_E_L,1},{"LD_E(HL)",&a::LD_E_HL_,1},{"LD_E_A",&a::LD_E_A,1},//5
+        {"LD_H_B",&a::LD_H_B,1}   ,{"LD_H_C",&a::LD_H_C,1}   ,{"LD_H_D",&a::LD_H_D,1}     ,{"LD_H_E",&a::LD_H_E,1}   ,{"LD_H_H",&a::NOP,1}      ,{"LD_H_L",&a::LD_H_L,1}   ,{"LD_H(HL)",&a::LD_H_HL_,1} ,{"LD_H_A",&a::LD_H_A,1}   ,{"LD_L_B",&a::LD_L_B,1},{"LD_L_C",&a::LD_L_C,1},{"LD_L_D",&a::LD_L_D,1},{"LD_L_E",&a::LD_L_E,1},{"LD_L_H",&a::LD_L_H,1},{"LD_L_L",&a::NOP,1}   ,{"LD_L(HL)",&a::LD_L_HL_,1},{"LD_L_A",&a::LD_L_A,1},//6
+        {"LD(HL)B",&a::LD_HL_B_,1},{"LD(HL)C",&a::LD_HL_C_,1},{"LD(HL)D",&a::LD_HL_D_,1}  ,{"LD(HL)E",&a::LD_HL_E_,1},{"LD(HL)H",&a::LD_HL_H_,1},{"LD(HL)L",&a::LD_HL_L_,1},{"HALT",&a::HALT,1}         ,{"LD(HL)A",&a::LD_HL_A_,1},{"LD_A_B",&a::LD_A_B,1},{"LD_A_C",&a::LD_A_C,1},{"LD_A_D",&a::LD_A_D,1},{"LD_A_E",&a::LD_A_E,1},{"LD_A_H",&a::LD_A_H,1},{"LD_A_L",&a::LD_A_L,1},{"LD_A(HL)",&a::LD_A_HL_,1},{"LD_A_A",&a::NOP,1},//7
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//8
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//9
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"XOR_B",&a::XOR_B,1},{"XOR_C",&a::XOR_C,1},{"XOR_D",&a::XOR_D,1},{"XOR_E",&a::XOR_E,1},{"XOR_H",&a::XOR_H,1},{"XOR_L",&a::XOR_L,1},{"XOR(HL)",&a::XOR_HL_,1},{"XOR_A",&a::XOR_A,1},//A
@@ -70,10 +70,10 @@ uint8_t& DMGCPU::GetRef(uint16_t addr)
 
 void DMGCPU::RunTillStop()
 {
-    //we are going to go until a HALT is raised or PC exceeds 512
+    //we are going to go until a HALT is raised
     try
     {
-        while(PC < 0xffff)
+        while(true)
         {
             PrintStatus();
             Advance();
@@ -122,6 +122,8 @@ void DMGCPU::PrintStatus()
 //Instruction set bindings
 
 void DMGCPU::NOP() {return;}
+
+void DMGCPU::HALT() {throw "HALT";}
 
 void DMGCPU::LD_SP() {SP = Imm16();}
 void DMGCPU::LD_HL() {WritePair(Imm16(), H, L);}
@@ -256,9 +258,14 @@ void DMGCPU::LD_HL_A_() {WriteBus(ReadPair(H, L), A);}
 void DMGCPU::LD_HL_D8_() {WriteBus(ReadPair(H, L), Imm8());}
 
 void DMGCPU::LD_BC_A_() {WriteBus(ReadPair(B, C), A);}
-void DMGCPU::LD_DE_A_() {WriteBus(ReadPair(D, E), A);;}
+void DMGCPU::LD_DE_A_() {WriteBus(ReadPair(D, E), A);}
+void DMGCPU::LD_A_BC_() {A=ReadBus(ReadPair(B, C));}
+void DMGCPI::LD_A_DE_() {A=ReadBus(ReadPair(D, E));}
 
-void DMGCPU::LD_LHp_A_() {}
+void DMGCPU::LD_HLp_A_() {WriteBus(ReadPair(H, L), A); IncrementPair(H, L);}
+void DMGCPU::LD_HLm_A_() {WriteBus(ReadPair(H, L), A); DecrementPair(H, L);}
+void DMGCPU::LD_A_HLp_() {A=ReadBus(ReadPair(H, L)); IncrementPair(H, L);}
+void DMGCPU::LD_A_HLm_() {A=ReadBus(ReadPair(H, L)); DecrementPair(H, L);}
 
 //helper functions
 
