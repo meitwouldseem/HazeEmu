@@ -232,6 +232,10 @@ private:
     void LD_A_HLp_();
     void LD_A_HLm_();
 
+    //bit rotate bindings
+
+    void RLA();
+
     //instruction behaviour implementations
 
     void XOR(uint8_t operand);
@@ -240,6 +244,10 @@ private:
     void INC(uint8_t &hi, uint8_t &lo);
     void DEC(uint8_t &operand);
     void DEC(uint8_t &hi, uint8_t &lo);
+
+    //bit rotate
+
+    void RL(uint8_t &operand);
 
     //Read and write HL
 
