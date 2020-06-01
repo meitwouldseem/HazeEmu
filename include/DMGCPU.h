@@ -92,6 +92,7 @@ private:
 
     void LD_SP();
     void LD_HL();
+    void LD_DE();
 
     //8bit xor bindings
     void XOR_B();
@@ -103,6 +104,15 @@ private:
     void XOR_HL_();
     void XOR_A();
     void XOR_D8();
+
+    //8bit add bindings
+    void ADD_HL_();
+
+    //8but subtract bindings
+    void SUB_B();
+
+    //Compare bindings
+    void CP_HL_();
 
     //16bit increment bindings
     void INC_BC();
@@ -236,6 +246,13 @@ private:
 
     void RLA();
 
+    //jump bindings
+
+    void JR_D8();
+
+    void JR_NZ_D8();
+    void JR_Z_D8();
+
     //instruction behaviour implementations
 
     void XOR(uint8_t operand);
@@ -245,9 +262,19 @@ private:
     void DEC(uint8_t &operand);
     void DEC(uint8_t &hi, uint8_t &lo);
 
+    void ADD(uint8_t operand);
+
+    void SUB(uint8_t operand);
+
+    void CP(uint8_t operand);
+
     //bit rotate
 
     void RL(uint8_t &operand);
+
+    //jump commands
+
+    void JR(uint8_t operand, bool condition);
 
     //Read and write HL
 
