@@ -9,7 +9,7 @@ DMGCPU::DMGCPU()
     lookup_1 =
     {
         {"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1}         ,{"LD(BC)A",&a::LD_BC_A_,1}  ,{"INC_BC",&a::INC_BC,1}   ,{"INC_B",&a::INC_B,1}     ,{"DEC_B",&a::DEC_B,1}     ,{"LD_B_D8",&a::LD_B_D8,1}   ,{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(BC)",&a::LD_A_BC_,1},{"DEC_BC",&a::DEC_BC,1},{"INC_C",&a::INC_C,1},{"DEC_C",&a::DEC_C,1},{"NOP",&a::LD_C_D8,1},{"NOP",&a::NOP,1},//0
-        {"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1}         ,{"LD(DE)A",&a::LD_DE_A_,1}  ,{"INC_DE",&a::INC_DE,1}   ,{"INC_D",&a::INC_D,1}     ,{"DEC_D",&a::DEC_D,1}     ,{"LD_D_D8",&a::LD_D_D8,1}   ,{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(DE)",&a::LD_A_DE_,1},{"DEC_DE",&a::DEC_DE,1},{"INC_E",&a::INC_E,1},{"DEC_E",&a::DEC_E,1},{"NOP",&a::LD_E_D8,1},{"NOP",&a::NOP,1},//1
+        {"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1}         ,{"LD(DE)A",&a::LD_DE_A_,1}  ,{"INC_DE",&a::INC_DE,1}   ,{"INC_D",&a::INC_D,1}     ,{"DEC_D",&a::DEC_D,1}     ,{"LD_D_D8",&a::LD_D_D8,1}   ,{"RLA",&a::RLA,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(DE)",&a::LD_A_DE_,1},{"DEC_DE",&a::DEC_DE,1},{"INC_E",&a::INC_E,1},{"DEC_E",&a::DEC_E,1},{"NOP",&a::LD_E_D8,1},{"NOP",&a::NOP,1},//1
         {"NOP",&a::NOP,1}         ,{"LD_HL",&a::LD_HL,1}     ,{"LD(HL+)A",&a::LD_HLp_A_,1},{"INC_HL",&a::INC_HL,1}   ,{"INC_H",&a::INC_H,1}     ,{"DEC_H",&a::DEC_H,1}     ,{"LD_H_D8",&a::LD_H_D8,1}   ,{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(HL+)",&a::LD_A_HLp_,1},{"DEC_HL",&a::DEC_HL,1},{"INC_L",&a::INC_L,1},{"DEC_L",&a::DEC_L,1},{"NOP",&a::LD_L_D8,1},{"NOP",&a::NOP,1},//2
         {"NOP",&a::NOP,1}         ,{"LD_SP",&a::LD_SP,1}     ,{"LD(HL-)A",&a::LD_HLm_A_,1},{"INC_SP",&a::INC_SP,1}   ,{"INC(HL)",&a::INC_HL_,1} ,{"DEC(HL)",&a::DEC_HL_,1} ,{"LD(HL)D8",&a::LD_HL_D8_,1},{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(HL-)",&a::LD_A_HLm_,1},{"DEC_SP",&a::DEC_SP,1},{"INC_A",&a::INC_A,1},{"DEC_A",&a::DEC_A,1},{"NOP",&a::LD_A_D8,1},{"NOP",&a::NOP,1},//3
         {"LD_B_B",&a::NOP,1}      ,{"LD_B_C",&a::LD_B_C,1}   ,{"LD_B_D",&a::LD_B_D,1}     ,{"LD_B_E",&a::LD_B_E,1}   ,{"LD_B_H",&a::LD_B_H,1}   ,{"LD_B_L",&a::LD_B_L,1}   ,{"LD_B(HL)",&a::LD_B_HL_,1} ,{"LD_B_A",&a::LD_B_A,1}   ,{"LD_C_B",&a::LD_C_B,1},{"LD_C_C",&a::NOP,1}   ,{"LD_C_D",&a::LD_C_D,1},{"LD_C_E",&a::LD_C_E,1},{"LD_C_H",&a::LD_C_H,1},{"LD_C_L",&a::LD_C_L,1},{"LD_C(HL)",&a::LD_C_HL_,1},{"LD_C_A",&a::LD_C_A,1},//4
@@ -260,12 +260,16 @@ void DMGCPU::LD_HL_D8_() {WriteBus(ReadPair(H, L), Imm8());}
 void DMGCPU::LD_BC_A_() {WriteBus(ReadPair(B, C), A);}
 void DMGCPU::LD_DE_A_() {WriteBus(ReadPair(D, E), A);}
 void DMGCPU::LD_A_BC_() {A=ReadBus(ReadPair(B, C));}
-void DMGCPI::LD_A_DE_() {A=ReadBus(ReadPair(D, E));}
+void DMGCPU::LD_A_DE_() {A=ReadBus(ReadPair(D, E));}
 
 void DMGCPU::LD_HLp_A_() {WriteBus(ReadPair(H, L), A); IncrementPair(H, L);}
 void DMGCPU::LD_HLm_A_() {WriteBus(ReadPair(H, L), A); DecrementPair(H, L);}
 void DMGCPU::LD_A_HLp_() {A=ReadBus(ReadPair(H, L)); IncrementPair(H, L);}
 void DMGCPU::LD_A_HLm_() {A=ReadBus(ReadPair(H, L)); DecrementPair(H, L);}
+
+//bit rotate bindings
+
+void DMGCPU::RLA() {RL(A);}
 
 //helper functions
 
@@ -315,6 +319,14 @@ void DMGCPU::DEC(uint8_t &operand)
     operand--;
     n = true;
     z = (operand==0x00);
+}
+
+void DMGCPU::RL(uint8_t &operand)
+{
+    uint8_t setcarry = operand;
+    operand << 1;
+    operand += c;
+    c = ((setcarry & 0x80) == 0x80);
 }
 
 //addressing modes
