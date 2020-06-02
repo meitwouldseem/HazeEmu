@@ -93,6 +93,7 @@ private:
     void LD_SP();
     void LD_HL();
     void LD_DE();
+    void LD_BC();
 
     //8bit xor bindings
     void XOR_B();
@@ -113,6 +114,7 @@ private:
 
     //Compare bindings
     void CP_HL_();
+    void CP_D8();
 
     //16bit increment bindings
     void INC_BC();
@@ -232,10 +234,18 @@ private:
     void LD_HL_A_();
     void LD_HL_D8_();
 
+    void LD_C_A_();
+    void LD_A_C_();
+
     void LD_BC_A_();
     void LD_DE_A_();
     void LD_A_BC_();
     void LD_A_DE_();
+
+    void LD_D16_A();
+
+    void LD_D8_A();
+    void LD_A_D8_();
 
     void LD_HLp_A_();
     void LD_HLm_A_();
@@ -253,6 +263,20 @@ private:
     void JR_NZ_D8();
     void JR_Z_D8();
 
+    //call/return bindings
+
+    void CALL_D16();
+
+    void RET();
+
+    //push bindings
+
+    void PUSH_BC();
+
+    //pop bindings
+
+    void POP_BC();
+
     //instruction behaviour implementations
 
     void XOR(uint8_t operand);
@@ -268,13 +292,18 @@ private:
 
     void CP(uint8_t operand);
 
+    void POP(uint8_t &hi, uint8_t &lo);
+    uint16_t POP();
+    void PUSH(uint8_t hi, uint8_t lo);
+    void PUSH(uint16_t operand);
+
     //bit rotate
 
     void RL(uint8_t &operand);
 
     //jump commands
 
-    void JR(uint8_t operand, bool condition);
+    void JR(int8_t operand, bool condition);
 
     //Read and write HL
 

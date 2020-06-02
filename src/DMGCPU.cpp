@@ -8,10 +8,10 @@ DMGCPU::DMGCPU()
     using a = DMGCPU;
     lookup_1 =
     {
-        {"NOP",&a::NOP,1}          ,{"NOP",&a::NOP,1}         ,{"LD(BC)A",&a::LD_BC_A_,1}  ,{"INC_BC",&a::INC_BC,1}   ,{"INC_B",&a::INC_B,1}     ,{"DEC_B",&a::DEC_B,1}     ,{"LD_B_D8",&a::LD_B_D8,1}   ,{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(BC)",&a::LD_A_BC_,1},{"DEC_BC",&a::DEC_BC,1},{"INC_C",&a::INC_C,1},{"DEC_C",&a::DEC_C,1},{"NOP",&a::LD_C_D8,1},{"NOP",&a::NOP,1},//0
-        {"NOP",&a::NOP,1}          ,{"LD_DE",&a::LD_DE,1}     ,{"LD(DE)A",&a::LD_DE_A_,1}  ,{"INC_DE",&a::INC_DE,1}   ,{"INC_D",&a::INC_D,1}     ,{"DEC_D",&a::DEC_D,1}     ,{"LD_D_D8",&a::LD_D_D8,1}   ,{"RLA",&a::RLA,1}         ,{"JR_D8",&a::JR_D8,1},{"NOP",&a::NOP,1},{"LD_A(DE)",&a::LD_A_DE_,1},{"DEC_DE",&a::DEC_DE,1},{"INC_E",&a::INC_E,1},{"DEC_E",&a::DEC_E,1},{"NOP",&a::LD_E_D8,1},{"NOP",&a::NOP,1},//1
-        {"JR_NZ_D8",&a::JR_NZ_D8,1},{"LD_HL",&a::LD_HL,1}     ,{"LD(HL+)A",&a::LD_HLp_A_,1},{"INC_HL",&a::INC_HL,1}   ,{"INC_H",&a::INC_H,1}     ,{"DEC_H",&a::DEC_H,1}     ,{"LD_H_D8",&a::LD_H_D8,1}   ,{"NOP",&a::NOP,1}         ,{"JR_Z_D8",&a::JR_Z_D8,1},{"NOP",&a::NOP,1},{"LD_A(HL+)",&a::LD_A_HLp_,1},{"DEC_HL",&a::DEC_HL,1},{"INC_L",&a::INC_L,1},{"DEC_L",&a::DEC_L,1},{"NOP",&a::LD_L_D8,1},{"NOP",&a::NOP,1},//2
-        {"NOP",&a::NOP,1}          ,{"LD_SP",&a::LD_SP,1}     ,{"LD(HL-)A",&a::LD_HLm_A_,1},{"INC_SP",&a::INC_SP,1}   ,{"INC(HL)",&a::INC_HL_,1} ,{"DEC(HL)",&a::DEC_HL_,1} ,{"LD(HL)D8",&a::LD_HL_D8_,1},{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(HL-)",&a::LD_A_HLm_,1},{"DEC_SP",&a::DEC_SP,1},{"INC_A",&a::INC_A,1},{"DEC_A",&a::DEC_A,1},{"NOP",&a::LD_A_D8,1},{"NOP",&a::NOP,1},//3
+        {"NOP",&a::NOP,1}          ,{"LD_BC",&a::LD_BC,1}     ,{"LD(BC)A",&a::LD_BC_A_,1}  ,{"INC_BC",&a::INC_BC,1}   ,{"INC_B",&a::INC_B,1}     ,{"DEC_B",&a::DEC_B,1}     ,{"LD_B_D8",&a::LD_B_D8,1}   ,{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(BC)",&a::LD_A_BC_,1},{"DEC_BC",&a::DEC_BC,1},{"INC_C",&a::INC_C,1},{"DEC_C",&a::DEC_C,1},{"LD_C_D8",&a::LD_C_D8,1},{"NOP",&a::NOP,1},//0
+        {"NOP",&a::NOP,1}          ,{"LD_DE",&a::LD_DE,1}     ,{"LD(DE)A",&a::LD_DE_A_,1}  ,{"INC_DE",&a::INC_DE,1}   ,{"INC_D",&a::INC_D,1}     ,{"DEC_D",&a::DEC_D,1}     ,{"LD_D_D8",&a::LD_D_D8,1}   ,{"RLA",&a::RLA,1}         ,{"JR_D8",&a::JR_D8,1},{"NOP",&a::NOP,1},{"LD_A(DE)",&a::LD_A_DE_,1},{"DEC_DE",&a::DEC_DE,1},{"INC_E",&a::INC_E,1},{"DEC_E",&a::DEC_E,1},{"LD_E_D8",&a::LD_E_D8,1},{"NOP",&a::NOP,1},//1
+        {"JR_NZ_D8",&a::JR_NZ_D8,1},{"LD_HL",&a::LD_HL,1}     ,{"LD(HL+)A",&a::LD_HLp_A_,1},{"INC_HL",&a::INC_HL,1}   ,{"INC_H",&a::INC_H,1}     ,{"DEC_H",&a::DEC_H,1}     ,{"LD_H_D8",&a::LD_H_D8,1}   ,{"NOP",&a::NOP,1}         ,{"JR_Z_D8",&a::JR_Z_D8,1},{"NOP",&a::NOP,1},{"LD_A(HL+)",&a::LD_A_HLp_,1},{"DEC_HL",&a::DEC_HL,1},{"INC_L",&a::INC_L,1},{"DEC_L",&a::DEC_L,1},{"LD_L_D8",&a::LD_L_D8,1},{"NOP",&a::NOP,1},//2
+        {"NOP",&a::NOP,1}          ,{"LD_SP",&a::LD_SP,1}     ,{"LD(HL-)A",&a::LD_HLm_A_,1},{"INC_SP",&a::INC_SP,1}   ,{"INC(HL)",&a::INC_HL_,1} ,{"DEC(HL)",&a::DEC_HL_,1} ,{"LD(HL)D8",&a::LD_HL_D8_,1},{"NOP",&a::NOP,1}         ,{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD_A(HL-)",&a::LD_A_HLm_,1},{"DEC_SP",&a::DEC_SP,1},{"INC_A",&a::INC_A,1},{"DEC_A",&a::DEC_A,1},{"LD_A_D8",&a::LD_A_D8,1},{"NOP",&a::NOP,1},//3
         {"LD_B_B",&a::NOP,1}       ,{"LD_B_C",&a::LD_B_C,1}   ,{"LD_B_D",&a::LD_B_D,1}     ,{"LD_B_E",&a::LD_B_E,1}   ,{"LD_B_H",&a::LD_B_H,1}   ,{"LD_B_L",&a::LD_B_L,1}   ,{"LD_B(HL)",&a::LD_B_HL_,1} ,{"LD_B_A",&a::LD_B_A,1}   ,{"LD_C_B",&a::LD_C_B,1},{"LD_C_C",&a::NOP,1}   ,{"LD_C_D",&a::LD_C_D,1},{"LD_C_E",&a::LD_C_E,1},{"LD_C_H",&a::LD_C_H,1},{"LD_C_L",&a::LD_C_L,1},{"LD_C(HL)",&a::LD_C_HL_,1},{"LD_C_A",&a::LD_C_A,1},//4
         {"LD_D_B",&a::LD_D_B,1}    ,{"LD_D_C",&a::LD_D_C,1}   ,{"LD_D_D",&a::NOP,1}        ,{"LD_D_E",&a::LD_D_E,1}   ,{"LD_D_H",&a::LD_D_H,1}   ,{"LD_D_L",&a::LD_D_L,1}   ,{"LD_D(HL)",&a::LD_D_HL_,1} ,{"LD_D_A",&a::LD_D_A,1}   ,{"LD_E_B",&a::LD_E_B,1},{"LD_E_C",&a::LD_E_C,1},{"LD_E_D",&a::LD_E_D,1},{"LD_E_E",&a::NOP,1}   ,{"LD_E_H",&a::LD_E_H,1},{"LD_E_L",&a::LD_E_L,1},{"LD_E(HL)",&a::LD_E_HL_,1},{"LD_E_A",&a::LD_E_A,1},//5
         {"LD_H_B",&a::LD_H_B,1}    ,{"LD_H_C",&a::LD_H_C,1}   ,{"LD_H_D",&a::LD_H_D,1}     ,{"LD_H_E",&a::LD_H_E,1}   ,{"LD_H_H",&a::NOP,1}      ,{"LD_H_L",&a::LD_H_L,1}   ,{"LD_H(HL)",&a::LD_H_HL_,1} ,{"LD_H_A",&a::LD_H_A,1}   ,{"LD_L_B",&a::LD_L_B,1},{"LD_L_C",&a::LD_L_C,1},{"LD_L_D",&a::LD_L_D,1},{"LD_L_E",&a::LD_L_E,1},{"LD_L_H",&a::LD_L_H,1},{"LD_L_L",&a::NOP,1}   ,{"LD_L(HL)",&a::LD_L_HL_,1},{"LD_L_A",&a::LD_L_A,1},//6
@@ -20,10 +20,10 @@ DMGCPU::DMGCPU()
         {"SUB_B",&a::SUB_B,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//9
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"XOR_B",&a::XOR_B,1},{"XOR_C",&a::XOR_C,1},{"XOR_D",&a::XOR_D,1},{"XOR_E",&a::XOR_E,1},{"XOR_H",&a::XOR_H,1},{"XOR_L",&a::XOR_L,1},{"XOR(HL)",&a::XOR_HL_,1},{"XOR_A",&a::XOR_A,1},//A
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"CP(HL)",&a::CP_HL_,1},{"NOP",&a::NOP,1},//B
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//C
+        {"NOP",&a::NOP,1},{"POP_BC",&a::POP_BC,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"PUSH_BC",&a::PUSH_BC,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"RET",&a::RET,1},{"NOP",&a::NOP,1},{"CB",&a::NOP,1},{"NOP",&a::NOP,1},{"CALL_D16",&a::CALL_D16,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//C
         {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},//D
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"XOR_D8",&a::XOR_D8,1},{"NOP",&a::NOP,1},//E
-        {"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1}//F
+        {"LDH(D8)A",&a::LD_D8_A,1},{"NOP",&a::NOP,1},{"LD(C)A",&a::LD_C_A_,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"LD(D16)A",&a::LD_D16_A,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"XOR_D8",&a::XOR_D8,1},{"NOP",&a::NOP,1},//E
+        {"LDH_A(D8)",&a::LD_A_D8_,1},{"NOP",&a::NOP,1},{"LD_A(C)",&a::LD_A_C_,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"NOP",&a::NOP,1},{"CP_D8",&a::CP_D8,1},{"NOP",&a::NOP,1}//F
     };
 }
 
@@ -128,6 +128,7 @@ void DMGCPU::HALT() {throw "HALT";}
 void DMGCPU::LD_SP() {SP = Imm16();}
 void DMGCPU::LD_HL() {WritePair(Imm16(), H, L);}
 void DMGCPU::LD_DE() {WritePair(Imm16(), D, E);}
+void DMGCPU::LD_BC() {WritePair(Imm16(), B, C);}
 
 //8bit xor bindings
 void DMGCPU::XOR_B() {XOR(B);}
@@ -148,6 +149,7 @@ void DMGCPU::SUB_B() {SUB(B);}
 
 //Compare bindings
 void DMGCPU::CP_HL_() {CP(ReadBus(ReadPair(H, L)));}
+void DMGCPU::CP_D8() {CP(Imm8());}
 
 //16bit increment bindings
 void DMGCPU::INC_BC() {IncrementPair(B, C);}
@@ -267,10 +269,18 @@ void DMGCPU::LD_HL_L_() {WriteBus(ReadPair(H, L), L);}
 void DMGCPU::LD_HL_A_() {WriteBus(ReadPair(H, L), A);}
 void DMGCPU::LD_HL_D8_() {WriteBus(ReadPair(H, L), Imm8());}
 
+void DMGCPU::LD_C_A_() {WriteBus(0xFF00+C, Imm8());}
+void DMGCPU::LD_A_C_() {A=ReadBus(0xFF00+C);}
+
 void DMGCPU::LD_BC_A_() {WriteBus(ReadPair(B, C), A);}
 void DMGCPU::LD_DE_A_() {WriteBus(ReadPair(D, E), A);}
 void DMGCPU::LD_A_BC_() {A=ReadBus(ReadPair(B, C));}
 void DMGCPU::LD_A_DE_() {A=ReadBus(ReadPair(D, E));}
+
+void DMGCPU::LD_D16_A() {WriteBus(Imm16(), A);}
+
+void DMGCPU::LD_D8_A() {WriteBus(0xFF00+Imm8(), A);}
+void DMGCPU::LD_A_D8_() {A=ReadBus(0xFF00+Imm8());}
 
 void DMGCPU::LD_HLp_A_() {WriteBus(ReadPair(H, L), A); IncrementPair(H, L);}
 void DMGCPU::LD_HLm_A_() {WriteBus(ReadPair(H, L), A); DecrementPair(H, L);}
@@ -287,6 +297,20 @@ void DMGCPU::JR_D8() {JR(Imm8(), true);}
 
 void DMGCPU::JR_NZ_D8() {JR(Imm8(), !z);}
 void DMGCPU::JR_Z_D8() {JR(Imm8(), z);}
+
+//call/return bindings
+
+void DMGCPU::CALL_D16() {PUSH(PC); PC=Imm16();}
+
+void DMGCPU::RET() {PC=POP();}
+
+//push bindings
+
+void DMGCPU::PUSH_BC() {PUSH(B, C);}
+
+//pop bindings
+
+void DMGCPU::POP_BC() {POP(B, C);}
 
 //helper functions
 
@@ -363,6 +387,36 @@ void DMGCPU::CP(uint8_t operand)
     n = true;
 }
 
+void DMGCPU::POP(uint8_t &hi, uint8_t &lo)
+{
+    lo = ReadBus(SP);
+    SP++;
+    hi = ReadBus(SP);
+    SP++;
+}
+
+uint16_t DMGCPU::POP()
+{
+    uint8_t lo = ReadBus(SP);
+    SP++;
+    uint8_t hi = ReadBus(SP);
+    SP++;
+    return (hi << 8) | lo;
+}
+
+void DMGCPU::PUSH(uint8_t hi, uint8_t lo)
+{
+    SP--;
+    WriteBus(SP, hi);
+    SP--;
+    WriteBus(SP, lo);
+}
+
+void DMGCPU::PUSH(uint16_t operand)
+{
+    PUSH(operand >> 8, operand);
+}
+
 void DMGCPU::RL(uint8_t &operand)
 {
     uint8_t setcarry = operand;
@@ -373,8 +427,8 @@ void DMGCPU::RL(uint8_t &operand)
 
 //Jump commands
 
-void DMGCPU::JR(uint8_t operand, bool condition)
-{
+void DMGCPU::JR(int8_t operand, bool condition)
+{//Note the unsigned argument
     if (condition)
         PC += operand;
 }
@@ -390,7 +444,8 @@ uint8_t DMGCPU::Imm8()
 
 uint16_t DMGCPU::Imm16()
 {
-    //hi and lo need to be 16 bit integers to make space for the bit shift
+    //hi and lo need to be 16 bit integers to make space for the bit shift.
+    //16 bit immediate data is read in reverse in all cases that I am aware of.
 
     uint16_t lo = ReadBus(PC);
     PC++;
